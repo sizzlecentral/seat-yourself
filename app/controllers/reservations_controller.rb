@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       flash[:alert] = "The reservation has been saved."
-      render :show
+      redirect_to restaurant_reservation_path(params[:restaurant_id], @reservation.id)
     else
       render 'restaurants/show'
     end
@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
   @reservation = Reservation.find(params[:id])
     if @reservation.update(reservation_params)
       flash[:alert] = "The reservation has been updated"
-      render :show
+      redirect_to @reservation
     else
       render 'restaurants/show'
     end
