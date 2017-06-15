@@ -1,0 +1,11 @@
+<h1>SeatYourself</h1>
+
+<% @restaurants.each do |restaurant| %>
+	<ul>
+		<li>Name: <%= restaurant.name %><br>
+			Summary: <%= restaurant.summary %><br>
+			Price range: <%= restaurant.price_range %><br>
+			<%= link_to 'View Restaurant', restaurant_path(restaurant) %>
+		</li>
+	</ul>
+<% end %>
