@@ -10,40 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616184943) do
+ActiveRecord::Schema.define(version: 20170616203602) do
 
-  create_table "reservations", force: :cascade do |t|
-    t.date "date"
-    t.time "time"
-    t.integer "party_size"
-    t.integer "user_id"
-    t.integer "restaurant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+	create_table "reservations", force: :cascade do |t|
+		t.date "date"
+		t.time "time"
+		t.integer "party_size"
+		t.integer "user_id"
+		t.integer "restaurant_id"
+		t.datetime "created_at", null: false
+		t.datetime "updated_at", null: false
+	end
 
-  create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.integer "price_range"
-    t.text "summary"
-    t.string "neighbourhood"
-    t.string "website"
-    t.string "menu_url"
-    t.integer "capacity"
-    t.integer "opens_at"
-    t.integer "closes_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "owner_id"
-  end
+	create_table "restaurants", force: :cascade do |t|
+		t.string "name"
+		t.string "address"
+		t.integer "price_range"
+		t.text "summary"
+		t.string "neighbourhood"
+		t.string "website"
+		t.string "menu_url"
+		t.integer "capacity"
+		t.integer "opens_at"
+		t.integer "closes_at"
+		t.datetime "created_at", null: false
+		t.datetime "updated_at", null: false
+		t.integer "owner_id"
+	end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+	create_table "users", force: :cascade do |t|
+		t.string "name"
+		t.string "email"
+		t.string "phone"
+		t.datetime "created_at", null: false
+		t.datetime "updated_at", null: false
+		t.string "password_digest"
+	end
 
 end
