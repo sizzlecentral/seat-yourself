@@ -4,4 +4,8 @@ class Restaurant < ApplicationRecord
   has_many :reservations
   has_many :users, through: :reservations
 
+  def self.open(time)
+    @open = Restaurant.where("opens_at < ?", time).where("closes_at > ?", time)
+  end
+
 end
