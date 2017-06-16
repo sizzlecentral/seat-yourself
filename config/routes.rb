@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :reservations, except: [:index, :new]
 end
 
+resources :user
+
 end

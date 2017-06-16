@@ -1,4 +1,4 @@
-Restaurant.create(
+Restaurant.create!(
   name:           'Parts & Labour',
   address:        '123 Queen St. W.',
   price_range:     2,
@@ -11,7 +11,7 @@ Restaurant.create(
   closes_at:      1100
 )
 
-Restaurant.create(
+Restaurant.create!(
   name:           'Canoe',
   address:        '5 Yonge St.',
   price_range:     5,
@@ -24,7 +24,7 @@ Restaurant.create(
   closes_at:      1000
 )
 
-Restaurant.create(
+Restaurant.create!(
   name:           'Subway',
   address:        '987 King St. W.',
   price_range:     1,
