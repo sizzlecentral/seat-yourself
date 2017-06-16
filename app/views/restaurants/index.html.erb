@@ -1,11 +1,15 @@
-<h1>SeatYourself</h1>
+<%= image_tag("restaurant-banner_smaller.jpg") %>
 
 <% @restaurants.each do |restaurant| %>
 	<ul>
-		<li>Name: <%= restaurant.name %><br>
-			Summary: <%= restaurant.summary %><br>
-			Price range: <%= restaurant.price_range %><br>
-			<%= link_to 'View Restaurant', restaurant_path(restaurant) %>
-		</li>
+    <div class="restaurant-card">
+  		<li>
+        <%= link_to image_tag("restaurant-banner_square.jpg"), restaurant_path(restaurant) %><br>
+        <%= restaurant.name %><br>
+  			<%= restaurant.neighbourhood %><br>
+  			<%= restaurant.price_range %><br>
+  			<%= link_to 'View Restaurant', restaurant_path(restaurant) %>
+  		</li>
+    </div>
 	</ul>
 <% end %>

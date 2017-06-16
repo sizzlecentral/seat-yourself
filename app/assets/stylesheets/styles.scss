@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  max-width: 800px;
+  width: 95%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -1em;
+  width: 100%;
+}
+
+.site-logo {
+  padding: .2em;
+  float: left;
+  margin-left: .8em;
+}
+
+.user-account {
+  padding: 1em;
+  float: right;
+  margin-left: .8em;
+}
+
+.restaurant-card {
+  float: left;
+  width: 33%;
+  padding: 1em;
+}
