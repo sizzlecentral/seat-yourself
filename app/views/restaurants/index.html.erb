@@ -1,11 +1,11 @@
-<%= image_tag("restaurant-banner_smaller.jpg") %>
+<%= image_tag("restaurant-banner_date-night.jpg") %>
 
 <% @restaurants.each do |restaurant| %>
 	<ul>
     <div class="restaurant-card">
   		<li>
-        <%= link_to image_tag("restaurant-banner_square.jpg"), restaurant_path(restaurant) %><br>
-        <%= restaurant.name %><br>
+        <%= link_to image_tag("https://unsplash.it/600/600/?random"), restaurant_path(restaurant) %><br>
+        <strong><%= restaurant.name %></strong><br>
   			<%= restaurant.neighbourhood %><br>
   			<%= restaurant.price_range %><br>
   			<%= link_to 'View Restaurant', restaurant_path(restaurant) %>

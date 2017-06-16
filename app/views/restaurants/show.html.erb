@@ -1,8 +1,22 @@
-<h3> <%= @restaurant.name %> </h3>
+<%= image_tag("restaurant-banner_smaller.jpg") %>
+<h2> <%= @restaurant.name %> </h2>
 
+<div class="restaurant-summary">
 <p>Description: <%= @restaurant.summary %><br>
-Price range: <%= @restaurant.price_range %> </p>
+</div>
 
+<div class="restaurant-details">
+  <p>Address: <strong><%= @restaurant.address %></strong><br>
+    Neighbourhood: <strong><%= @restaurant.neighbourhood %></strong><br>
+    Price Range: <strong><%= @restaurant.price_range %></strong><br>
+    Menu: <strong><%= @restaurant.menu_url %></strong><br>
+    Website: <strong><%= @restaurant.website %></strong><br>
+    Opens at: <strong><%= @restaurant.opens_at %></strong><br>
+    Closes at: <strong><%= @restaurant.closes_at %></strong>
+  </p>
+</div>
+<hr>
+<div class="reservation-form">
 <h4>Make a Reservation</h4>
-
 <%= render 'reservations/form', restaurant: @restaurant, reservation: @reservation %>
+</div>

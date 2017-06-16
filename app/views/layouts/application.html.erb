@@ -7,17 +7,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <div class="site-logo">
-        <h1>SeatYourself</h1>
-      </div>
+        <div class="site-logo">
+          <%= link_to root_path do %>
+            <h1>SeatYourself</h1>
+          <% end %>
+        </div>
       <div class="user-account">
-        <p>Logged in as:  <strong>John Doe</strong></p>
+        <p>Logged in as:<br>
+        <strong>John Doe</strong></p>
       </div>
     </header>
     <%= yield %>
+    <footer>
+      <p>&copy; 2017 Team 3G Network</p>
+    </footer>
   </body>
 </html>
