@@ -81,6 +81,16 @@ footer {
   margin: 2em 0;
 }
 
+footer p {
+  clear: both;
+}
+
+.footer-list {
+  float: left;
+  width: 33%;
+  margin-bottom: 1em;
+}
+
 .site-logo {
   padding: .2em;
   float: left;
