@@ -4,11 +4,11 @@
 	<ul>
     <div class="restaurant-card">
   		<li>
-        <%= link_to image_tag("https://unsplash.it/600/600/?random"), restaurant_path(restaurant) %><br>
-        <strong><%= restaurant.name %></strong><br>
+        <%= link_to restaurant_path(restaurant) do %>
+        <%= image_tag("https://unsplash.it/500/600/?random") %><br>
+        <strong><%= restaurant.name.upcase %> / <%= restaurant.price_range %></strong><br>
   			<%= restaurant.neighbourhood %><br>
-  			<%= restaurant.price_range %><br>
-  			<%= link_to 'View Restaurant', restaurant_path(restaurant) %>
+        <% end %>
   		</li>
     </div>
 	</ul>

@@ -10,8 +10,17 @@ body {
   margin: auto;
 }
 
+p {
+  font-family: 'Merriweather', serif;
+  line-height: 1.6em;
+}
+
 h1, h2, h3, h4, strong {
   font-family: 'Work Sans', sans-serif;
+}
+
+strong {
+  font-size: 1.1em;
 }
 
 a, a:hover, a:visited, a:link, a:active {
@@ -33,18 +42,43 @@ ul {
   width: 100%;
 }
 
-footer {
-  clear: both;
-  text-align: center;
-  padding: 1em;
-}
-
 hr {
   clear: both;
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #d4d4d4;
+  border-radius: .1em;
+}
+
+input[type="submit"] {
+  background-color: #f5f5f5;
+  border: none;
+  font-size: 1.5em;
+}
+
+input[type="submit"]:hover {
+  background-color: #d4d4d4;
+  border: none;
+  font-size: 1.5em;
+}
+
+form {
+  margin-bottom: 2em;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  padding: 1em;
+  background-color: #f5f5f5;
+  margin: 2em 0;
 }
 
 .site-logo {
@@ -82,4 +116,13 @@ hr {
   width: 33%;
   padding: 1em;
   margin-bottom: 1em;
+}
+
+.button {
+  background-color: #f5f5f5;
+  border-radius: .1em;
+}
+
+div#error_explanation h3 {
+  color: red;
 }
