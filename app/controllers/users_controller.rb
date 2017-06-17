@@ -1,19 +1,22 @@
 class UsersController < ApplicationController
 
-  def index
+	def index
 		@user = User.all
 	end
 
-  def new
+	def new
 		@user = User.new
 	end
 
 	def create
 		@user = User.new(user_params)
 
+		@user.password = params[:user][:password]
+		@user.password_confirmation = params[:user][:password_confirmation]
+
 		if @user.save
 			flash[:alert] = "The user has been saved"
-			render :show
+			redirect_to restaurants_path
 		else
 			render :new
 		end
@@ -21,11 +24,11 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-    @reservation = Reservation.new
+		@reservation = Reservation.new
 		render :show
 	end
 
-  def edit
+	def edit
 		@user = User.find(params[:id])
 	end
 

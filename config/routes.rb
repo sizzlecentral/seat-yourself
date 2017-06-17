@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'restaurants#index'
+	root 'restaurants#index'
 
-  resources :restaurants do
-  resources :reservations, except: [:index, :new]
+	resources :restaurants do
+	resources :reservations, except: [:index, :new]
 end
 
-resources :user
+	resources :users
 
 end
