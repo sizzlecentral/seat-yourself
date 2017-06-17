@@ -1,8 +1,7 @@
 <%= form_for([restaurant, reservation]) do |f| %>
   <% if reservation.errors.any? %>
     <div id="error_explanation">
-      <h3><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h3>
-
+      <h3>There are <%= reservation.errors.count %> issues, please try again:</h3>
       <ol>
       <% reservation.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
