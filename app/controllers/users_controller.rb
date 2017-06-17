@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 		@user.password_confirmation = params[:user][:password_confirmation]
 
 		if @user.save
-			flash[:alert] = "The user has been saved"
+			flash[:notice] = 'The user has been saved'
 			redirect_to restaurants_path
 		else
 			flash[:error] = "Sorry, try again"
