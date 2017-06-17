@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+	get 'sessions/new'
 
-  get 'sessions/create'
+	get 'sessions/create'
 
-  get 'sessions/destroy'
+	get 'sessions/destroy'
+
+	get 'sessions/new'
+
+	get 'sessions/create'
+
+	get 'sessions/destroy'
 
 	root 'restaurants#index'
 
@@ -13,5 +19,6 @@ Rails.application.routes.draw do
 end
 
 	resources :users
+	resources :sessions, only: %i(new create destroy)
 
 end
