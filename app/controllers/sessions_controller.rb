@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
 		if u && u.authenticate(params[:session][:email])
 			flash[:notice] = 'Successfully logged in'
-			redirect_to '/restaurants/'
+			redirect_to '/'
 		else
 			flash.now[:alert] = 'Try Again'
 			render :new
