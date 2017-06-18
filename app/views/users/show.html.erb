@@ -39,7 +39,7 @@
 
 <div class="owned-restaurants">
   <h3>Restaurants</h3>
-  <h5><%= link_to "Add Restaurant", new_restaurant %></h5>
+  <h5><%= link_to "Add Restaurant", new_restaurant_path() %></h5>
 
   <ol>
     <% @user.restaurants.each do |restaurant| %>
