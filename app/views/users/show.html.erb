@@ -9,13 +9,14 @@
   <ol>
     <% @user.reservations.each do |reservation| %>
 
-    <li>  <%= if reservation.date >= Date.today %>
+    <li>  <% if reservation.date >= Date.today %>
           <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
           Time: <%= reservation.time %> Party Size: <%= reservation.party_size %> <br>
           <%= link_to 'Edit', edit_restaurant_reservation_path(reservation) %> | <%= link_to 'DELETE' , restaurant_reservation_path(reservation), method: :delete, data: {confirm: "Are you sure you want to delete this reesrvation'?"} %>
           <% end %>
-    <% end %>
     </li>
+    <% end %>
+
   </ol>
 
 </div>
@@ -26,20 +27,23 @@
   <ol>
     <% @user.reservations.each do |reservation| %>
 
-    <li>  <%= if reservation.date <= Date.today %>
-          <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
-          Time: <%= reservation.time %> Party Size: <%= reservation.party_size %> <br>
-          <%= link_to 'DELETE' , restaurant_reservation_path(reservation), method: :delete, data: {confirm: "Are you sure you want to delete this reesrvation'?"} %>
+    <li>  <% if reservation.date < Date.today %>
+          <p>Date: <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
+          Time: <%= reservation.time %> Party Size: <%= reservation.party_size %></p>
+          <p> <%= link_to 'DELETE' , restaurant_reservation_path(reservation), method: :delete, data: {confirm: "Are you sure you want to delete this reesrvation'?"} %></p>
+          <% else %>
+          <p>No Past Reservations</p>
           <% end %>
+          </li>
     <% end %>
-    </li>
+
   </ol>
 
 </div>
 
 <div class="owned-restaurants">
   <h3>Restaurants</h3>
-  <h5><%= link_to "Add Restaurant", new_restaurant_path() %></h5>
+  <h5><strong><%= link_to "Add Restaurant", new_restaurant_path() %></strong></h5>
 
   <ol>
     <% @user.restaurants.each do |restaurant| %>
@@ -48,9 +52,10 @@
           <%= restaurant.name %>  <br>
           <%= restaurant.address %>
           <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %> | <%= link_to 'DELETE' , restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete '#{restaurant.name}'?"} %>
-          <% end %>
-    <% end %>
+
     </li>
+    <% end %>
+
   </ol>
 
 
