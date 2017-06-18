@@ -17,6 +17,7 @@ class RestaurantsController < ApplicationController
       flash[:alert] = "The restaurant has been saved"
       # Why do we render instead of redirect to show?
       render :show
+      # Shouldn't it be: redirect_to users_path(session[:user_id])
     else
       render :new
     end
@@ -36,7 +37,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     if @restaurant.update(restaurant_params)
       flash[:alert] = "The restaurant has been updated"
-      redirect_to @restaurant
+      redirect_to users_path(session[:user_id])
     else
       redirect_back_or_to @restaurant
     end
