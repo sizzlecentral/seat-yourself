@@ -1,0 +1,57 @@
+<h1>User Profile</h1>
+<p><%= link_to "Edit Profile", edit_user_path(@user) %></p>
+
+<hr>
+
+<div class="upcoming-reservations">
+  <h3>Upcoming Reservations</h3>
+
+  <ol>
+    <% @user.reservations.each do |reservation| %>
+
+    <li>  <%= if reservation.date >= Date.today %>
+          <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
+          Time: <%= reservation.time %> Party Size: <%= reservation.party_size %> <br>
+          <%= link_to 'Edit', edit_restaurant_reservation_path(reservation) %> | <%= link_to 'DELETE' , restaurant_reservation_path(reservation), method: :delete, data: {confirm: "Are you sure you want to delete this reesrvation'?"} %>
+          <% end %>
+    <% end %>
+    </li>
+  </ol>
+
+</div>
+
+<div class="password_digest-reservations">
+  <h3>Past Reservations</h3>
+
+  <ol>
+    <% @user.reservations.each do |reservation| %>
+
+    <li>  <%= if reservation.date <= Date.today %>
+          <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
+          Time: <%= reservation.time %> Party Size: <%= reservation.party_size %> <br>
+          <%= link_to 'DELETE' , restaurant_reservation_path(reservation), method: :delete, data: {confirm: "Are you sure you want to delete this reesrvation'?"} %>
+          <% end %>
+    <% end %>
+    </li>
+  </ol>
+
+</div>
+
+<div class="owned-restaurants">
+  <h3>Restaurants</h3>
+  <h5><%= link_to "Add Restaurant", new_restaurant %></h5>
+
+  <ol>
+    <% @user.restaurants.each do |restaurant| %>
+
+    <li>
+          <%= restaurant.name %>  <br>
+          <%= restaurant.address %>
+          <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %> | <%= link_to 'DELETE' , restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete '#{restaurant.name}'?"} %>
+          <% end %>
+    <% end %>
+    </li>
+  </ol>
+
+
+</div>
