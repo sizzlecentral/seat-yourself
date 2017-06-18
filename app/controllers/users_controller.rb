@@ -18,10 +18,10 @@ class UsersController < ApplicationController
 
 		if @user.save
 			flash[:notice] = 'The user has been saved'
-			redirect_to restaurants_path
+			redirect_to restaurants_url
 		else
 			flash[:error] = "Sorry, try again"
-			render :new
+			render new_user_path
 		end
 	end
 
