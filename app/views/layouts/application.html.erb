@@ -21,8 +21,6 @@
 				</div>
 
 			<div class="user-account">
-        <!-- REPLACE PLACEHOLDER WITH THIS <p><%= link_to 'Profile', user_path(session[:user_id]) %></p> -->
-        <p><strong>Profile Link</strong></p>
 				<% if session[:user_id] %>
 				<p> Hello user <%= session[:user_id] %>
 				<p><%= link_to 'Logout', sessions_path, method: :delete %></p>
