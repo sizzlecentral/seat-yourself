@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 		u = User.find_by(email: params[:session][:email])
 		if u && u.authenticate(params[:session][:password])
 			session[:user_id] = u.id
-
 		 flash[:notice] = 'Successfully logged in'
 			redirect_to root_url
 		else

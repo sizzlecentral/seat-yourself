@@ -1,13 +1,20 @@
-<h1>Log In</h1>
-<%= form_for :session, url: sessions_path do |f| %>
-
-	<div class='field'>
-		<%= f.label :email %>
-		<%= f.email_field :email %>
-
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-	</div>
-
-		<%= f.submit 'Log In' %>
-	<% end %>
+<h2>Log In</h2>
+<div class="restaurant-summary">
+  <%= form_for :session, url: sessions_path do |f| %>
+  	<div class='field'>
+  		<strong><%= f.label :email %></strong><br>
+  		<%= f.email_field :email %>
+  	</div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :password %></strong><br>
+  		<%= f.password_field :password %>
+  	</div>
+    <br>
+    <div class="actions">
+      <div class="button">
+    	  <strong><%= f.submit 'Log In' %></strong>
+      </div>
+    </div>
+  <% end %>
+</div>

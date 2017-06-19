@@ -1,0 +1,67 @@
+
+
+
+<%= form_for restaurant do |f| %>
+<% if restaurant.errors.any? %>
+  <div id="error_explanation">
+    <h3>There are <%= restaurant.errors.count %> issues, please try again:</h3>
+    <ol>
+    <% restaurant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+  </div>
+<% end %>
+
+
+  <div class='field'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+
+  <div class='field'>
+    <%= f.label :summary %>
+    <%= f.text_area :summary %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :neighbourhood %>
+    <%= f.text_field :neighbourhood %>
+  </div>
+
+
+  <div class='field'>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :menu_url %>
+    <%= f.text_field :menu_url %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :capacity %>
+    <%= f.number_field :capacity %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :opens_at %>
+    <%= f.number_field :opens_at %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :closes_at %>
+    <%= f.number_field :closes_at %>
+  </div>
+
+
+  <%= f.submit %>
+
+<% end %>

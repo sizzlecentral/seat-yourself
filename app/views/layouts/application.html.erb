@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>SeatYourself</title>
-		<%= csrf_meta_tags %>
+  <head>
+    <title>SeatYourself</title>
+    <%= csrf_meta_tags %>
 
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
-	</head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
+  </head>
 
 	<body>
 		<header>
@@ -21,6 +21,8 @@
 				</div>
 
 			<div class="user-account">
+        <!-- REPLACE PLACEHOLDER WITH THIS <p><%= link_to 'Profile', user_path(session[:user_id]) %></p> -->
+        <p><strong>Profile Link</strong></p>
 				<% if session[:user_id] %>
 				<p> Hello user <%= session[:user_id] %>
 				<p><%= link_to 'Logout', sessions_path, method: :delete %></p>
