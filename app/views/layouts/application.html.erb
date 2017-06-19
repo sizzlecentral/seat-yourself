@@ -25,7 +25,7 @@
 				<p> Hello user <%= session[:user_id] %>
 				<p><%= link_to 'Logout', sessions_path, method: :delete %></p>
 				<% else %>
-				<p><%= link_to 'New User', new_user_path %> | <%= link_to 'Log In', sessions_new_path %></p>
+				<p><%= link_to 'New User', new_user_path %> | <%= link_to 'Log In', new_session_path %></p>
 				<% end %>
 
 				<% if flash.any? %>
