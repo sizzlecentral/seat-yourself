@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>SeatYourself</title>
-		<%= csrf_meta_tags %>
+  <head>
+    <title>SeatYourself</title>
+    <%= csrf_meta_tags %>
 
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
-	</head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
+  </head>
 
-	<body>
-		<header>
-				<div class="site-logo">
-					<%= link_to root_path do %>
-						<h1>SeatYourself</h1>
-					<% end %>
-				</div>
-			<div class="user-account">
-				<p><%= link_to 'New User', new_user_path %> | <%= link_to 'Log In', sessions_new_path %></p>
-			</div>
-		</header>
-		<%= yield %>
-	</body>
-	<footer>
-		<div class="footer-list">
-			<h3>Heading 1</h3>
-			<ul>
-				<li>Linky</li>
-				<li>Linky</li>
-				<li>Linky</li>
-			</ul>
-		</div>
-		<div class="footer-list">
-			<h3>Heading 2</h3>
-			<ul>
-				<li>Linky</li>
-				<li>Linky</li>
-				<li>Linky</li>
-			</ul>
-		</div>
-		<div class="footer-list">
-			<h3>Heading 3</h3>
-			<ul>
-				<li>Linky</li>
-				<li>Linky</li>
-				<li>Linky</li>
-			</ul>
-		</div>
-		<p>&copy; 2017 Team 3G Network</p>
-	</footer>
+  <body>
+    <header>
+        <div class="site-logo">
+          <%= link_to root_path do %>
+            <h1>SeatYourself</h1>
+          <% end %>
+        </div>
+      <div class="user-account">
+        <!-- REPLACE PLACEHOLDER WITH THIS <p><%= link_to 'Profile', user_path(session[:user_id]) %></p> -->
+        <p><strong>Profile Link</strong></p>
+        <p><%= link_to 'New User', new_user_path %> | <%= link_to 'Log In', sessions_new_path %></p>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+  <footer>
+    <div class="footer-list">
+      <h3>Heading 1</h3>
+      <ul>
+        <li>Linky</li>
+        <li>Linky</li>
+        <li>Linky</li>
+      </ul>
+    </div>
+    <div class="footer-list">
+      <h3>Heading 2</h3>
+      <ul>
+        <li>Linky</li>
+        <li>Linky</li>
+        <li>Linky</li>
+      </ul>
+    </div>
+    <div class="footer-list">
+      <h3>Heading 3</h3>
+      <ul>
+        <li>Linky</li>
+        <li>Linky</li>
+        <li>Linky</li>
+      </ul>
+    </div>
+    <p>&copy; 2017 Team 3G Network</p>
+  </footer>
 </html>

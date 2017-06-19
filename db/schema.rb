@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170617200137) do
     t.integer "closes_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "owner_id"
+    t.integer "user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
