@@ -1,32 +1,43 @@
-<h1>Sign Up</h1>
-
- <% if @user.errors.any? %>
-	 <ul>
-			 <% @user.errors.full_messages.each do |m| %>
-			 <li><%= m %></li>
-		 <% end %>
-	 </ul>
- <% end %>
-
-<%= form_for @user do |f| %>
-
-	<div class='field'>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-
-		<%= f.label :email %>
-		<%= f.email_field :email %>
-
-		<%= f.label :phone %>
-		<%= f.phone_field :phone %>
-
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-
-		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation %>
-	</div>
-
-		<%= f.submit 'Sign Up' %>
-
-<% end %>
+<h2>Create an Account</h2>
+<div class="restaurant-summary">
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h3>There are <%= @user.errors.count %> issues, please try again:</h3>
+        <ol>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ol>
+      </div>
+    <% end %>
+  	<div class='field'>
+  		<strong><%= f.label :name %></strong><br>
+  		<%= f.text_field :name %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :email %></strong><br>
+  		<%= f.email_field :email %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :phone %></strong><br>
+  		<%= f.phone_field :phone %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :password %></strong><br>
+  		<%= f.password_field :password %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :password_confirmation %></strong><br>
+  		<%= f.password_field :password_confirmation %>
+  	</div>
+    <br>
+    <div class="actions">
+  		  <strong><%= f.submit 'Sign Up' %></strong>
+    </div>
+  <% end %>
+</div>
