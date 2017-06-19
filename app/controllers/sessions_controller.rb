@@ -4,10 +4,11 @@ class SessionsController < ApplicationController
 
 	def create
 		u = User.find_by(email: params[:session][:email])
+		if u && u.authenticate(params[:session][:password])
+			session[:user_id] = u.id
 
-		if u && u.authenticate(params[:session][:email])
-			flash[:notice] = 'Successfully logged in'
-			redirect_to '/'
+		 flash[:notice] = 'Successfully logged in'
+			redirect_to root_url
 		else
 			flash.now[:alert] = 'Try Again'
 			render :new
@@ -15,5 +16,8 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+		session[:user_id] = nil
+		flash[:notice] = "You're logged out!"
+		redirect_to root_url
 	end
 end

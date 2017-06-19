@@ -13,14 +13,30 @@
 
 	<body>
 		<header>
+
 				<div class="site-logo">
 					<%= link_to root_path do %>
 						<h1>SeatYourself</h1>
 					<% end %>
 				</div>
+
 			<div class="user-account">
+				<% if session[:user_id] %>
+				<p> Hello user <%= session[:user_id] %>
+				<p><%= link_to 'Logout', sessions_path, method: :delete %></p>
+				<% else %>
 				<p><%= link_to 'New User', new_user_path %> | <%= link_to 'Log In', sessions_new_path %></p>
+				<% end %>
+
+				<% if flash.any? %>
+				<% flash.each do |key, value| %>
+				<p class="<%= key %>">
+					<%= value %>
+				</p>
+				<% end %>
+			 <% end %>
 			</div>
+
 		</header>
 		<%= yield %>
 	</body>
