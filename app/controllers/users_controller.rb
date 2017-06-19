@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       flash[:notice] = 'The user has been saved'
       redirect_to restaurants_path
     else
-      flash[:error] = "Sorry, try again"
       render :new
     end
   end

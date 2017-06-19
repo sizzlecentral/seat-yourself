@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		 flash[:notice] = 'Successfully logged in'
 			redirect_to root_url
 		else
-			flash.now[:alert] = 'Try Again'
+			flash.now[:alert] = 'Please try again'
 			render :new
 		end
 	end

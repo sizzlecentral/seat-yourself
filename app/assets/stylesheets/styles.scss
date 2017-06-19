@@ -137,6 +137,11 @@ div#error_explanation h3 {
 	color: #f35a00;
 }
 
+.alert, .notice {
+  clear: both;
+  color: #f35a00;
+}
+
 .button-logged-out {
   background-color: #f5f5f5;
   border: none;

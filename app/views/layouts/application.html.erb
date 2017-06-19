@@ -27,15 +27,17 @@
 				<% else %>
 				<p><%= link_to 'New User', new_users_path %> | <%= link_to 'Log In', new_sessions_path %></p>
 				<% end %>
-
-				<% if flash.any? %>
-				<% flash.each do |key, value| %>
-				<p class="<%= key %>">
-					<%= value %>
-				</p>
-				<% end %>
-			 <% end %>
 			</div>
+
+      <div class="error_explanation">
+        <% if flash.any? %>
+        <% flash.each do |key, value| %>
+        <h3 class="<%= key %>">
+          <%= value %>
+        </h3>
+        <% end %>
+       <% end %>
+     </div>
 
 		</header>
 		<%= yield %>
