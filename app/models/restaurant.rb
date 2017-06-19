@@ -1,5 +1,8 @@
 class Restaurant < ApplicationRecord
 
+  # validates :name, :address, :price_range, :summary, :neighbourhood, :website, :menu_url, :opens_at, :closes_at, :capacity, presence: true
+  # validates :opens_at, :closes_at, :price_range, :capacity, numericality: { only_integer: true }
+
   belongs_to :owner, class_name: "User", optional: true
   has_many :reservations
   has_many :users, through: :reservations
@@ -13,7 +16,7 @@ class Restaurant < ApplicationRecord
   end
 
   def slots
-    slots = closes_at - opens_at
+    closes_at - opens_at
   end
 
   def capacity?(party_size)
@@ -24,9 +27,9 @@ class Restaurant < ApplicationRecord
     end
   end
 
-  def current_capacity
+  def current_capacity(date, time)
     total = 0
-    reservations.each do |reservation|
+    reservations.where(date: date, time: time).each do |reservation|
       total += reservation.party_size
     end
     capacity - total
