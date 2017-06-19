@@ -1,16 +1,6 @@
 <h2>Log In</h2>
 <div class="restaurant-summary">
   <%= form_for :session, url: sessions_path do |f| %>
-    <% if session.errors.any? %>
-      <div id="error_explanation">
-        <h3>There are <%= session.errors.count %> issues, please try again:</h3>
-        <ol>
-          <% session.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ol>
-      </div>
-    <% end %>
   	<div class='field'>
   		<strong><%= f.label :email %></strong><br>
   		<%= f.email_field :email %>
