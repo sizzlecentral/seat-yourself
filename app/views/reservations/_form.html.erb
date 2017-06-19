@@ -16,8 +16,11 @@
   </div>
   <br>
   <div class="field">
-    <strong><%= f.label :time %></strong><br />
-    <%= f.time_field :time %>
+    <ul>
+      <% restaurant.slots.times do |slot| %>
+        <li>"slot"</li>
+      <% end %>
+    </ul>
   </div>
   <br>
   <div class="field">

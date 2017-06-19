@@ -7,8 +7,8 @@ Restaurant.create!(
 	website:        'partsandlabour.com',
 	menu_url:       'partsandlabour.com/menu',
 	capacity:       80,
-	opens_at:       0600,
-	closes_at:      1100
+	opens_at:       6,
+	closes_at:      11
 )
 
 Restaurant.create!(
@@ -20,8 +20,8 @@ Restaurant.create!(
 	website:        'canoe.com',
 	menu_url:       'canoe.com/menu',
 	capacity:       80,
-	opens_at:       0700,
-	closes_at:      1000
+	opens_at:       7,
+	closes_at:      10
 )
 
 Restaurant.create!(
@@ -33,6 +33,6 @@ Restaurant.create!(
 	website:        'subway.com',
 	menu_url:       'subway.com/menu',
 	capacity:       12,
-	opens_at:       0600,
-	closes_at:      0200
+	opens_at:       6,
+	closes_at:      12
 )

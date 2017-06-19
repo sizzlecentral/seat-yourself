@@ -1,5 +1,5 @@
 class Session < ApplicationRecord
 
-  validates :email, :passord, presence: true
+  validates :email, :password, presence: true
 
 end
