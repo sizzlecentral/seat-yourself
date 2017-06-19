@@ -10,15 +10,10 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    # NOT sure if this is right??? - TEMP CHANGED TO WORK
-    @restaurant.user_id = 1
-    # session[:user_id]
-
+    @restaurant.user_id = current_user
     if @restaurant.save
       flash[:alert] = "The restaurant has been saved"
-      # Why do we render instead of redirect to show?
       redirect_to user_path(@restaurant.user_id)
-
     else
       render :new
     end

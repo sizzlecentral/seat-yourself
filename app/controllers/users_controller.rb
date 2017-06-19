@@ -36,9 +36,9 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash[:alert] = "The user has been updated"
-      redirect_to @user
+      redirect_to users_path(@user)
     else
-      redirect_back_or_to @user
+      redirect_back_or_to users_path(@user)
     end
   end
 

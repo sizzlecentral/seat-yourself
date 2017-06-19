@@ -1,0 +1,43 @@
+<h3>Edit Profile</h3>
+<div class="restaurant-summary">
+  <%= form_for @user, url: users_path(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h3>There are <%= @user.errors.count %> issues, please try again:</h3>
+        <ol>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ol>
+      </div>
+    <% end %>
+  	<div class='field'>
+  		<strong><%= f.label :name %></strong><br>
+  		<%= f.text_field :name %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :email %></strong><br>
+  		<%= f.email_field :email %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :phone %></strong><br>
+  		<%= f.phone_field :phone %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :password %></strong><br>
+  		<%= f.password_field :password %>
+    </div>
+    <br>
+    <div class='field'>
+  		<strong><%= f.label :password_confirmation %></strong><br>
+  		<%= f.password_field :password_confirmation %>
+  	</div>
+    <br>
+    <div class="actions">
+  		  <strong><%= f.submit 'Update Profile' %></strong>
+    </div>
+  <% end %>
+</div>

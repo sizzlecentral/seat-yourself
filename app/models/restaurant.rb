@@ -14,9 +14,22 @@ class Restaurant < ApplicationRecord
 
   def slots
     slots = closes_at - opens_at
-    slots.times.each do |slot|
-      puts "slot"
+  end
+
+  def capacity?(party_size)
+    if current_capacity >= party_size
+      return true
+    else
+      return false
     end
+  end
+
+  def current_capacity
+    total = 0
+    reservations.each do |reservation|
+      total += reservation.party_size
+    end
+    capacity - total
   end
 
 end
