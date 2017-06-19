@@ -49,23 +49,22 @@
 </div>
 
 <div class="owned-restaurants">
-  <% if count == 0 %>
-  <p> Own a Restaurant? Click Below to Add</p>
-  <% else %>
+  <% if @user.owned_restaurants.count > 0 %>
   <h3>Restaurants</h3>
+  <% else %>
+  <p> Own a Restaurant? Click Below to Add</p>
   <% end %>
-  <% count = 0 %>
-  <h5><strong><%= link_to "Add Restaurant", new_restaurant_path() %></strong></h5>
+<h5><strong><%= link_to "Add Restaurant", new_restaurant_path() %></strong></h5>
+
 
   <ol>
-    <% @user.restaurants.each do |restaurant| %>
+
+    <% @user.owned_restaurants.each do |restaurant| %>
 
     <li>
           <%= restaurant.name %>  <br>
           <%= restaurant.address %>
           <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %> | <%= link_to 'DELETE' , restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete '#{restaurant.name}'?"} %>
-          <% count += 1 %>
-
     </li>
     <% end %>
 
