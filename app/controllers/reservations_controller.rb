@@ -11,13 +11,16 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.new(reservation_params)
     @reservation.user = current_user
 
-    if @reservation.has_capacity
-      if @reservation.date >= Date.today
-        if @reservation.save
-          flash[:alert] = "The reservation has been saved."
-          redirect_to restaurant_path(@restaurant)
-          return
-        end
+    if @reservation.valid?
+        if @reservation.has_capacity
+          if @reservation.date >= Date.today
+            if @reservation.save
+              current_user.increment!(:loyalty_point, 5)
+              flash[:alert] = "The reservation has been saved."
+              redirect_to restaurant_path(@restaurant)
+              return
+            end
+          end
       end
       flash[:alert] = "Invalid Reservation Please Try Again"
       render  "restaurants/show"
@@ -45,6 +48,9 @@ class ReservationsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+    if @reservation.date >= Date.today
+      current_user.increment!(:loyalty_point, -5)
+    end
     flash[:alert] = "The reservation has been deleted"
     render 'restaurants/show'
   end
