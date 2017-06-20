@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
 
-  validates :name, :address, :price_range, :summary, :neighbourhood, :website, :menu_url, :opens_at, :closes_at, :capacity, presence: true
+  validates :name, :address, :price_range, :summary, :neighbourhood, :website, :menu_url, :opens_at, :closes_at, :capacity, :featured_image, presence: true
   validates :opens_at, :closes_at, :price_range, :capacity, numericality: { only_integer: true }
 
   belongs_to :owner, class_name: "User", optional: true
