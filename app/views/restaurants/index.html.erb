@@ -5,9 +5,11 @@
         <div class="restaurant-card">
       		<li>
             <%= link_to restaurant_path(restaurant) do %>
-              <%= image_tag("https://unsplash.it/500/600/?random") %><br>
-              <strong><%= restaurant.name.upcase %> / <%= restaurant.dollar_sign %></strong><br>
-        			<%= restaurant.neighbourhood %><br>
+              <%= image_tag restaurant.featured_image, :style => "position: absolute; clip: rect(0px,250px,300px,0px);" %><br>
+              <div class="clearfix-small">
+                <strong><%= restaurant.name.upcase %> / <%= restaurant.dollar_sign %></strong><br>
+          			<%= restaurant.neighbourhood %><br>
+              </div>
             <% end %>
       		</li>
         </div>

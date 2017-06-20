@@ -23,9 +23,9 @@ strong {
 	font-size: 1.1em;
 }
 
-a, a:hover, a:visited, a:link, a:active {
-		text-decoration: none;
-		color: black;
+a {
+	text-decoration: none;
+	color: black;
 }
 
 img {
@@ -57,7 +57,7 @@ input, textarea, select {
 	border-radius: .1em;
 }
 
-select#reservation_time {
+select#reservation_time, select#user_role {
     height: 3.7em;
 }
 
@@ -112,11 +112,11 @@ footer p {
 .restaurant-card {
 	float: left;
 	width: 33%;
-	padding: 1em;
+  margin-bottom: 2em;
 }
 
 .restaurant-summary {
-	width: 66%;
+	width: 60%;
 	float: left;
 }
 
@@ -127,9 +127,10 @@ footer p {
 .restaurant-details {
 	background-color: #f5f5f5;
 	float: right;
-	width: 33%;
+	width: 40%;
 	padding: 1em;
 	margin-bottom: 1em;
+  margin-top: .9em;
 }
 
 .button {
@@ -164,4 +165,15 @@ div#error_explanation h3 {
 .restaurant-details a {
   font-family: 'Work Sans', sans-serif;
   font-size: .9em;
+}
+
+.clearfix {
+  clear: both;
+  margin-top: 20em;
+}
+
+.clearfix-small {
+  clear: both;
+  margin-top: 18em;
+  margin-left: .5em;
 }
