@@ -28,7 +28,7 @@ canoe = Restaurant.create!(
   menu_url:       'canoe.com/menu',
   capacity:       80,
   opens_at:       7,
-  closes_at:      10
+  closes_at:      10,
   owner_id:       2
 )
 
