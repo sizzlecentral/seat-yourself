@@ -10,6 +10,9 @@
       <% if reservation.date >= Date.today %>
         <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
         Time: <%= reservation.time %> Party Size: <%= reservation.party_size %> <br>
+
+        <%= link_to 'Edit', edit_restaurant_reservation_path(reservation.restaurant_id, reservation.id) %> | <%= link_to 'DELETE' , restaurant_reservation_path(reservation.restaurant_id, reservation.id), method: :delete, data: {confirm: "Are you sure you want to delete this reservation?"} %>
+
         <% count += 1 %>
       <% end %>
     </li>
@@ -51,7 +54,7 @@
 
     <li>
           <%= restaurant.name %>  <br>
-          <%= restaurant.address %>
+          <%= restaurant.address %> <br>
           <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %> | <%= link_to 'DELETE' , restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete '#{restaurant.name}'?"} %>
     </li>
     <% end %>
