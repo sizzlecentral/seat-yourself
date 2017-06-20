@@ -1,15 +1,16 @@
 <%= image_tag("restaurant-banner_date-night.jpg") %>
-
-<% @restaurants.each do |restaurant| %>
-	<ul>
-    <div class="restaurant-card">
-  		<li>
-        <%= link_to restaurant_path(restaurant) do %>
-        <%= image_tag("https://unsplash.it/500/600/?random") %><br>
-        <strong><%= restaurant.name.upcase %> / <%= restaurant.price_range %></strong><br>
-  			<%= restaurant.neighbourhood %><br>
-        <% end %>
-  		</li>
-    </div>
+<div class="card-container">
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+        <div class="restaurant-card">
+      		<li>
+            <%= link_to restaurant_path(restaurant) do %>
+              <%= image_tag("https://unsplash.it/500/600/?random") %><br>
+              <strong><%= restaurant.name.upcase %> / <%= restaurant.price_range %></strong><br>
+        			<%= restaurant.neighbourhood %><br>
+            <% end %>
+      		</li>
+        </div>
+    <% end %>
 	</ul>
-<% end %>
+</div>
