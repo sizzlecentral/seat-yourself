@@ -9,6 +9,11 @@ class ReservationsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.new(reservation_params)
 
+    if @restaurant.has_capacity == false
+      flash[:alert] = "Time is unavailable please select another time"
+      render 'restaurants/show'
+    end
+
     if @reservation.save
       flash[:alert] = "The reservation has been saved."
       redirect_to restaurant_reservation_path(params[:restaurant_id], @reservation.id)

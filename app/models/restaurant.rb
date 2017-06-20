@@ -15,8 +15,8 @@ class Restaurant < ApplicationRecord
     end
   end
 
-  def slots
-    closes_at - opens_at
+  def time_slots
+    (opens_at..(closes_at-1)).to_a
   end
 
   def capacity?(party_size)
