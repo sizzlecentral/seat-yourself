@@ -16,6 +16,7 @@ class ReservationsController < ApplicationController
         if @reservation.save
           flash[:alert] = "The reservation has been saved."
           redirect_to restaurant_path(@restaurant)
+          return
         end
       end
       flash[:alert] = "Invalid Reservation Please Try Again"

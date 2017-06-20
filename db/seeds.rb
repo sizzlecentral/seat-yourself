@@ -14,7 +14,8 @@ parts = Restaurant.create!(
   capacity:       80,
   opens_at:       6,
   closes_at:      11,
-  owner_id:       2
+  owner_id:       2,
+  featured_image: "http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg"
 
 )
 
@@ -29,7 +30,9 @@ canoe = Restaurant.create!(
   capacity:       80,
   opens_at:       7,
   closes_at:      10,
-  owner_id:       2
+  owner_id:       2,
+  featured_image: "http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg"
+
 )
 
 subway = Restaurant.create!(
@@ -43,7 +46,9 @@ subway = Restaurant.create!(
   capacity:       12,
   opens_at:       6,
   closes_at:      12,
-  owner_id:       3
+  owner_id:       3,
+  featured_image: "http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg"
+
 )
 
 bob = User.create!(
