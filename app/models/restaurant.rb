@@ -35,4 +35,18 @@ class Restaurant < ApplicationRecord
     capacity - total
   end
 
+  def dollar_sign
+    if price_range == 1
+      return '$'
+    elsif price_range == 2
+      return '$$'
+    elsif price_range == 3
+      return '$$$'
+    elsif price_range == 4
+      return '$$$$'
+    else
+      return '$$$$$'
+    end
+  end
+
 end
