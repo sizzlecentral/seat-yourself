@@ -39,12 +39,12 @@
   </div>
   <hr>
   <div class="owned-restaurants">
-    <% if @user.owned_restaurants.count > 0 %>
-      <h3>Restaurants</h3>
-    <% else %>
-      <h3> Own a Restaurant? Click Below to Add</h3>
-    <% end %>
-  <%= link_to "Add Restaurant", new_restaurant_path() %>
+   <% if User::ALLOWED_ROLES.include?(current_user.role) %>
+		  <h3>Click Below to Add Your Restaurant" </h3>
+      <%= link_to "Add Restaurant", new_restaurant_path() %>
+		<% else %>
+			<h3>Restaurants</h3>
+		<% end %>
     <ol>
       <% @user.owned_restaurants.each do |restaurant| %>
       <li>
