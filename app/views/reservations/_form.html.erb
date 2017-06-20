@@ -16,11 +16,17 @@
   </div>
   <br>
   <div class="field">
-  <%# <% f.select(:time, restaurant.slots.times) %>
+  <%# <% f.select(:time, restaurant.time_slots.each do |slot|
+                          ['#{slot} PM', slot]) %>
 
-    <ul>
+<%# restaurant.time_slots.each do |slot|
+#  arg 1 = '#{slot} PM'
+#  arg 3(the value) = slot
+#  end %>
+
+    <%#<ul>
       <% restaurant.slots.times do |slot| %>
-        <li>"slot"</li>
+      <%#  <li>"slot"</li>
       <% end %>
     </ul>
   </div>
