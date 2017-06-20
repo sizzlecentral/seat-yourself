@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-	root 'restaurants#index'
+  root 'restaurants#index'
 
-	delete '/sessions' => 'sessions#destroy'
-	
-	resources :restaurants do
-	resources :reservations, except: [:index, :new]
+  delete '/sessions' => 'sessions#destroy'
+
+  resources :restaurants do
+  resources :reservations, except: [:new]
 
 end
 

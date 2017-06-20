@@ -1,5 +1,10 @@
 class ReservationsController < ApplicationController
 
+  def index
+    @restaurant = Restaurant.find(params[:restaurant_id])
+
+  end
+
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.new(reservation_params)
@@ -22,7 +27,7 @@ class ReservationsController < ApplicationController
   @reservation = Reservation.find(params[:id])
     if @reservation.update(reservation_params)
       flash[:alert] = "The reservation has been updated"
-      redirect_to @reservation
+      redirect_to users_path(current_user)
     else
       render 'restaurants/show'
     end
@@ -37,7 +42,7 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-		params.require(:reservation).permit(:date, :time, :party_size)
-	end
+    params.require(:reservation).permit(:date, :time, :party_size)
+  end
 
 end
