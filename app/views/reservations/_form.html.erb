@@ -16,6 +16,12 @@
   </div>
   <br>
   <div class="field">
+
+    <%= f.select(:time ) do %>
+  <% restaurant.time_slots.each do |c| -%>
+    <%= content_tag(:option, "#{c} PM", value: c) %>
+  <% end %>
+<% end %>
   <%# <% f.select(:time, restaurant.time_slots.each do |slot|
                           ['#{slot} PM', slot]) %>
 

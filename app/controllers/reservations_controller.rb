@@ -6,17 +6,19 @@ class ReservationsController < ApplicationController
   end
 
   def create
+
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.new(reservation_params)
+    @reservation.user = current_user
 
-    if @restaurant.has_capacity == false
+    unless @reservation.has_capacity
       flash[:alert] = "Time is unavailable please select another time"
       render 'restaurants/show'
     end
 
     if @reservation.save
       flash[:alert] = "The reservation has been saved."
-      redirect_to restaurant_reservation_path(params[:restaurant_id], @reservation.id)
+      redirect_to restaurant_path(@restaurant)
     else
       render 'restaurants/show'
     end
