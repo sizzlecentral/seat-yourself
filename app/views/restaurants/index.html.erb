@@ -6,7 +6,7 @@
       		<li>
             <%= link_to restaurant_path(restaurant) do %>
               <%= image_tag("https://unsplash.it/500/600/?random") %><br>
-              <strong><%= restaurant.name.upcase %> / <%= restaurant.price_range %></strong><br>
+              <strong><%= restaurant.name.upcase %> / <%= restaurant.dollar_sign %></strong><br>
         			<%= restaurant.neighbourhood %><br>
             <% end %>
       		</li>
