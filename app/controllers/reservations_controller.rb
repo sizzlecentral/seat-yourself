@@ -11,17 +11,17 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.new(reservation_params)
     @reservation.user = current_user
 
-    unless @reservation.has_capacity
-      flash[:alert] = "Time is unavailable please select another time"
-      render 'restaurants/show'
+    if @reservation.has_capacity
+      if @reservation.date >= Date.today
+        if @reservation.save
+          flash[:alert] = "The reservation has been saved."
+          redirect_to restaurant_path(@restaurant)
+        end
+      end
+      flash[:alert] = "Invalid Reservation Please Try Again"
+      render  "restaurants/show"
     end
 
-    if @reservation.save
-      flash[:alert] = "The reservation has been saved."
-      redirect_to restaurant_path(@restaurant)
-    else
-      render 'restaurants/show'
-    end
   end
 
   def edit
