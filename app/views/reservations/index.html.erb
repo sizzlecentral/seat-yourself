@@ -1,0 +1,41 @@
+<h2><%=@restaurant.name %></h2>
+
+<div class="upcoming-reservations">
+  <h3>Upcoming Reservations</h3>
+  <% count = 0 %>
+  <ol>
+    <% @restaurant.reservations.each do |reservation| %>
+    <li>
+      <% if reservation.date >= Date.today %>
+        <%= reservation.date %>  |  Time: <%= reservation.time %>  |   Party Size: <%= reservation.party_size %><br>
+        Customer: <%= User.find(reservation.user_id).name %> <br>
+        <%= User.find(reservation.user_id).email %> | <%= User.find(reservation.user_id).phone %>
+        <br>
+        <%= link_to 'DELETE' , restaurant_reservation_path(reservation.restaurant_id, reservation.id), method: :delete, data: {confirm: "Are you sure you want to delete this reservation?"} %>
+        <% count += 1 %>
+      <% end %>
+    </li>
+    <% end %>
+  </ol>
+  <%= "No upcoming Reservations" if count == 0 %>
+</div>
+<hr>
+
+
+<div class="password_digest-reservations">
+  <h3>Past Reservations</h3>
+  <% count = 0 %>
+  <ol>
+    <% @restaurant.reservations.each do |reservation| %>
+    <% if reservation.date < Date.today %>
+    <li>
+      <p>Date: <%= reservation.date %> Location: <%= Restaurant.find(reservation.restaurant_id).name %> <br>
+      Time: <%= reservation.time %> Party Size: <%= reservation.party_size %></p>
+      <% count += 1 %>
+      <% end %>
+      </li>
+    <% end %>
+  </ol>
+  <%= "No Past Reservations" if count == 0 %>
+</div>
+<hr>

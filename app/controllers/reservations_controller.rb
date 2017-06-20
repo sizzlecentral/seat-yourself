@@ -1,5 +1,10 @@
 class ReservationsController < ApplicationController
 
+  def index
+    @restaurant = Restaurant.find(params[:restaurant_id])
+
+  end
+
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.new(reservation_params)

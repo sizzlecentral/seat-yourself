@@ -55,7 +55,7 @@
     <li>
           <%= restaurant.name %>  <br>
           <%= restaurant.address %> <br>
-          <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %> | <%= link_to 'DELETE' , restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete '#{restaurant.name}'?"} %>
+           <%= link_to 'Booked Reservations', restaurant_reservations_path(restaurant.id)  %>| <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %> | <%= link_to 'DELETE' , restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete '#{restaurant.name}'?"} %>
     </li>
     <% end %>
 
