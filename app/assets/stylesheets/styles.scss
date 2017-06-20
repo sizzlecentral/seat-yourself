@@ -50,11 +50,15 @@ hr {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-input, textarea {
+input, textarea, select {
 	width: 100%;
 	padding: 1em;
 	border: 1px solid #d4d4d4;
 	border-radius: .1em;
+}
+
+select#reservation_time {
+    height: 3.7em;
 }
 
 input[type="submit"] {
@@ -155,4 +159,9 @@ div#error_explanation h3 {
 .button-logged-out p {
   font-family: 'Work Sans', sans-serif;
   font-size: 1.3em;
+}
+
+.restaurant-details a {
+  font-family: 'Work Sans', sans-serif;
+  font-size: .9em;
 }
