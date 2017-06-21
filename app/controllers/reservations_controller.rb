@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
 
       flash[:alert] = "Invalid Reservation Please Try Again"
       render  "restaurants/show"
-  
+
   end
 
   def edit
@@ -48,7 +48,7 @@ class ReservationsController < ApplicationController
       current_user.increment!(:loyalty_point, -5)
     end
     flash[:alert] = "The reservation has been deleted"
-    render 'restaurants/show'
+    redirect_to users_path(current_user)
   end
 
   def reservation_params
