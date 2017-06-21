@@ -13,7 +13,7 @@
 			<% @user.reservations.each do |reservation| %>
 			<li class="list-background">
 				<% if reservation.date >= Date.today %>
-					<strong><%= Restaurant.find(reservation.restaurant_id).name %></strong><br>
+					<strong><%= link_to Restaurant.find(reservation.restaurant_id).name, Restaurant.find(reservation.restaurant_id) %></strong><br>
           <%= Restaurant.find(reservation.restaurant_id).address %><br>
           <%= reservation.date %> / Time: <%= reservation.time %><br>
           Party Size: <%= reservation.party_size %> <br>
@@ -33,7 +33,7 @@
 		<ul>
 			<% @user.reservations.each do |reservation| %>
   			<% if reservation.date < Date.today %>
-          <strong><%= Restaurant.find(reservation.restaurant_id).name %></strong><br>
+          <strong><%= link_to Restaurant.find(reservation.restaurant_id).name, Restaurant.find(reservation.restaurant_id) %></strong><br>
           <%= Restaurant.find(reservation.restaurant_id).address %><br>
           <%= reservation.date %> / Time: <%= reservation.time %><br>
           Party Size: <%= reservation.party_size %> <br>
