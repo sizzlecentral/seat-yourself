@@ -9,13 +9,13 @@ parts = Restaurant.create!(
   price_range:     2,
   summary:        'Offal',
   neighbourhood:  'Parkdale',
-  website:        'partsandlabour.com',
-  menu_url:       'partsandlabour.com/menu',
+  website:        'http://www.partsandlabour.ca/',
+  menu_url:       'https://static1.squarespace.com/static/52255c4fe4b01cea4fd99a47/t/591f9c3db3db2b2e45f267d7/1495243848332/P%26L_2017_Spring_V2.1_WEB.pdf',
   capacity:       80,
   opens_at:       6,
   closes_at:      11,
   owner_id:       2,
-  featured_image: "http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg"
+  featured_image: 'http://dobbernationloves.com/wp-content/uploads/2010/09/img_7298.jpg'
 
 )
 
@@ -25,14 +25,13 @@ canoe = Restaurant.create!(
   price_range:     5,
   summary:        'Fancy pants',
   neighbourhood:  'Financial district',
-  website:        'canoe.com',
-  menu_url:       'canoe.com/menu',
+  website:        'http://www.canoerestaurant.com/',
+  menu_url:       'http://www.canoerestaurant.com/menus/',
   capacity:       80,
   opens_at:       7,
   closes_at:      10,
   owner_id:       2,
-  featured_image: "http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg"
-
+  featured_image: 'http://blog.weddingful.com/wp-content/uploads/2014/07/Canoe.jpg'
 )
 
 subway = Restaurant.create!(
@@ -41,14 +40,13 @@ subway = Restaurant.create!(
   price_range:     1,
   summary:        'Made your way',
   neighbourhood:  'Entertainment district',
-  website:        'subway.com',
-  menu_url:       'subway.com/menu',
+  website:        'http://www.subway.com/en-CA',
+  menu_url:       'http://www.subway.com/en-CA/MenuNutrition/Menu/All',
   capacity:       12,
   opens_at:       6,
   closes_at:      12,
   owner_id:       3,
-  featured_image: "http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg"
-
+  featured_image: 'https://i.ytimg.com/vi/nLTl4czrfmw/maxresdefault.jpg'
 )
 
 bob = User.create!(
