@@ -11,7 +11,6 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.new(reservation_params)
     @reservation.user = current_user
 
-
             if @reservation.save
               current_user.increment!(:loyalty_point, 5)
               flash[:alert] = "The reservation has been saved."
