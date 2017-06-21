@@ -11,21 +11,17 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.new(reservation_params)
     @reservation.user = current_user
 
-    if @reservation.valid?
-        if @reservation.has_capacity
-          if @reservation.date >= Date.today
+
             if @reservation.save
               current_user.increment!(:loyalty_point, 5)
               flash[:alert] = "The reservation has been saved."
               redirect_to restaurant_path(@restaurant)
               return
             end
-          end
-      end
+
       flash[:alert] = "Invalid Reservation Please Try Again"
       render  "restaurants/show"
-    end
-
+  
   end
 
   def edit
